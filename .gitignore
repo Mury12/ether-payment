@@ -1,0 +1,7 @@
+blog*
+node_modules*
+package-lock.json
+history
+/**/css
+/**/pjs
+**/img/albums*
