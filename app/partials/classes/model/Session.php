@@ -27,4 +27,12 @@ class Session
             $_SESSION[hash($this->hash, $ssid)] = $ssval;
         }
     }
+
+    function getSessionValue($ssid)
+    {
+       $val = $_SESSION[hash($this->hash, $ssid)] ?? null;
+
+       if($val) return $val;
+       return false;
+    }
 }

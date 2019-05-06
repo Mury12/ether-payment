@@ -11,12 +11,13 @@ let data = {
     contract: false,
     truffleDirectory: "../../truffle/build/contracts/",
     contractName: 'HelloWorld',
+    userWallet: ""
 }
 
 let eth3 = new Vue({
     el: '#web3',
     data: data,
-    
+
     methods: {
         getAccounts: function()
         {
@@ -103,9 +104,30 @@ let eth3 = new Vue({
             }
 
         },
+        getUserWallet: function()
+        {
+            $.post('api/usr/get', {
+                exec: 'get_usr_wallet'
+            }, null, 'json').then(r => {
+                data.userWallet = r.res;
+            })
+        },
+
+        updateWallet: function()
+        {
+            $.post('api/usr/alter/ethwallet', {
+                exec: 'update_wallet',
+                wallet: data.userWallet
+            }, null, 'json').then(r => {
+                simpleAlert.show({
+                    message: r.res,
+                    type: r.err == false ? 'success' : 'danger'
+                });
+            })
+        }
     },
 
     created: function (){
-        
+            this.getUserWallet();
     }
 })

@@ -12,17 +12,15 @@ class UserController
     private $usr;
     private $ue;
     function __construct($request = null){
-        if($request != null){
-            $this->usr = new User($request);
-            $this->ue  = new UserEntity($request);
-        }
+        $this->usr = new User($request);
+        $this->ue  = new UserEntity($request);
     }
 
     function login()
     {
         global $_s;
         if($uid = $this->ue->bindUserPassword()){
-            
+
             $tok = $this->generateLoginToken($uid);
             error_log($tok);
 
@@ -44,19 +42,19 @@ class UserController
     function generateLoginToken($uid)
     {
         $tok = $this->ue->getActiveToken($uid);
-    
+
         if(!$tok){
             $tok = $this->usr->generateLoginToken($uid);
 
             if($this->ue->saveToken($uid, $tok)){
-                return $tok;            
+                return $tok;
             }
             return false;
         }
         return $tok;
     }
 
-    
+
 
     function signUp()
     {
@@ -69,7 +67,7 @@ class UserController
     {
         if(\array_key_exists(hash('sha256', 'auth'), $_SESSION) && $_SESSION[hash('sha256', 'auth')]){
             return true;
-        }   
+        }
         return false;
     }
 
@@ -80,5 +78,23 @@ class UserController
         \sendJsonResponse(['res'=>'Você saiu.']);
     }
 
+    function addUserEthWallet($uid, $wallet)
+    {
+        if($this->ue->addUserEthWallet($uid, $wallet)){
+            \sendJsonResponse(['res' => 'Carteira '.$wallet.' inserida com sucesso.', 'err'=>false]);
+        }else{
+            \sendJsonResponse(['res' => 'Houve um problema ao alterar este parâmetro..', 'err'=>true]);
+        }
+    }
+
+    function getUserWallet($uid)
+    {
+        $w = $this->ue->getUserWallet($uid);
+        if($w)
+            \sendJsonResponse(['res' => $w, 'err'=>false]);
+        else
+            \sendJsonResponse(['res' => 'Carteira ou usuário não encontrado.', 'err'=>true]);
+
+    }
 
 }

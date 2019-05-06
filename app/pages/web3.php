@@ -7,11 +7,14 @@
                 <div class="divisor bg-brand-light mb-5 mt-3"></div>
                 <button class="btn btn-info" @click="getAccounts"> Request Accounts</button>
                 <button class="btn btn-info" @click="getHashRate"> Request Hashrate</button>
-                <button class="btn btn-info" @click="killBalances = true, killWallets = true"> Stop Updates</button>
-                <button class="btn btn-info" @click="killBalances = true, killWallets = true"> Stop Updates</button>
+                <button class="btn btn-info" @click="killBalances = true, killWallets = true"> Stop Updates</button><br/>
                 <label class="btn btn-info" @click="consumeContract">
                     <input type="text" name="addr" v-model="contractAddress"><br/>
                     Consume Contract
+                </label>
+                <label class="btn btn-info" @click="updateWallet">
+                    <input type="text" name="addr" v-model="userWallet"><br/>
+                    Update Wallet
                 </label>
 
                 <p class="t-white" v-if="contract">{{contract.message}}</p>
