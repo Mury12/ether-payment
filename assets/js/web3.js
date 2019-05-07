@@ -8,11 +8,11 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0x6c4F4e17683CB95Ed3D10B8Abf1F428003dF25E7",
+    contractAddress: "0xB26De4E54806961D3ba2c8A6A32174954933Bf24",
     contract: false,
     truffleDirectory: "../../truffle/build/contracts/",
     contractName: 'PaymentHolder',
-    userWallet: ""
+    userWallet: "",
 }
 
 let eth3 = new Vue({
@@ -118,10 +118,10 @@ let eth3 = new Vue({
             $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
-                myContract.methods.getContractBalance().send({
+                myContract.methods.searchPayment(data.userWallet).call({
                     from: data.userWallet
                 }).then(result=>{
-                    console.log(result._hex/10**18);
+                    console.log(result);
                 });
                 onRequest = false;
             });
@@ -138,10 +138,11 @@ let eth3 = new Vue({
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
                 myContract.methods.insertPaymentIntention(
-                    1, 100000000000, 2, '9812dh9821',
-                    '0x972E12e6B66F6503E29a4B139268880A869cA541'
+                    1, 1, 2, '9812dh9821',
+                    data.userWallet
                 ).send({
-                    from: data.userWallet
+                    from: data.userWallet,
+                    gas: 1000000
                 }).then(result=>{
                     console.log(result);
                 });

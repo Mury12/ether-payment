@@ -1,5 +1,6 @@
 const PaymentHolder = artifacts.require("PaymentHolder");
 
 module.exports = function(deployer) {
-  deployer.deploy(PaymentHolder);
+  let _passwd = 'jnd2l3h';
+  deployer.deploy(PaymentHolder, _passwd);
 };

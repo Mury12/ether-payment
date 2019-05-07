@@ -12,6 +12,10 @@
                     <input type="text" name="addr" v-model="contractAddress"><br/>
                     Consume Contract
                 </label>
+                <label class="btn btn-info" @click="insertPaymentIntention">
+                    <input type="text" name="addr" v-model="contractAddress"><br/>
+                    Consume Contract
+                </label>
                 <label class="btn btn-info" @click="updateWallet">
                     <input type="text" name="addr" v-model="userWallet"><br/>
                     Update Wallet

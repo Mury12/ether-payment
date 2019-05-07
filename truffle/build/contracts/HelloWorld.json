@@ -13,8 +13,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xe21f37ce"
+      "type": "function"
     },
     {
       "constant": false,
@@ -23,8 +22,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0xbcdfe0d5"
+      "type": "function"
     },
     {
       "constant": true,
@@ -38,8 +36,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xce6d41de"
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"Hello\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getMessage\",\"outputs\":[{\"name\":\"myString\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"message\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/andremury/vhosts/ether-payment/truffle/contracts/HelloWorld.sol\":\"HelloWorld\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/andremury/vhosts/ether-payment/truffle/contracts/HelloWorld.sol\":{\"keccak256\":\"0x754ea480721fbb0494fcfa98aed51e71cc8973fe3838359dd8ba0d0f8c76b733\",\"urls\":[\"bzzr://e3fcafa41c2097f8a86a8648339b593493e83158b5fbb49ad453886ea63eb558\"]}},\"version\":1}",
@@ -519,16 +516,9 @@
     "name": "solc",
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
-  "networks": {
-    "5777": {
-      "events": {},
-      "links": {},
-      "address": "0xa6D0DE48DCf96Fc62Ea9DB392Ae00f29ba96BF22",
-      "transactionHash": "0x20891c1920c7f6ae78201879c9fecaf80f7ef17c746a670e750c5b7b544d1d1d"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.0.8",
-  "updatedAt": "2019-05-03T03:59:40.160Z",
+  "updatedAt": "2019-05-07T04:25:27.715Z",
   "devdoc": {
     "methods": {}
   },
