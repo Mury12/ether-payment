@@ -17,8 +17,18 @@ contract PaymentHolder{
 
     Payment[] payments;
     address payable owner;
-    uint256 ownerBalance;
+    bytes32 passphrase;
+    uint256 balance;
     uint256[] confirmedPayments;
+
+
+    constructor (string memory passwd) public
+    {
+        bytes memory _passwd = bytes(passwd);
+        balance = 0;
+        owner = msg.sender;
+        passphrase = sha256(_passwd);
+    }
 
     function insertPaymentIntention
         (uint256 paymentId, uint256 price, uint userId, string memory paymentToken, address payable user_wallet)
@@ -32,6 +42,9 @@ contract PaymentHolder{
         p.confirmed = false;
         p.user_wallet = user_wallet;
         p.gasUsed = tx.gasprice;
+
+        balance -= tx.gasprice;
+
         return (payments.push(p) - 1);
     }
 
@@ -47,14 +60,18 @@ contract PaymentHolder{
         (found, idx) = searchPayment(msg.sender, msg.value);
 
         if(!found){
-            msg.sender.transfer(amountToReturn(msg.value));
+            uint256 amountToReturn = amountToReturn(msg.value);
+            msg.sender.transfer(amountToReturn);
+            balance -= amountToReturn;
             return;
         }
         payments[idx].confirmed = true;
         confirmedPayments.push(idx);
+
+        balance += payments[idx].price;
     }
 
-    function getPayments() public view
+    function getPayments() public
         returns (address[] memory, uint256[] memory)
     {
         address[] memory addr = new address[](payments.length);
@@ -64,11 +81,11 @@ contract PaymentHolder{
             addr[i] = payments[i].user_wallet;
             prices[i] = payments[i].price;
         }
-
+        balance -= tx.gasprice;
         return (addr, prices);
     }
 
-    function searchPayment(address addr, uint256 price) private view
+    function searchPayment(address addr, uint256 price) private
         returns (bool found, uint idx)
     {
         uint i = payments.length - 1;
@@ -78,17 +95,50 @@ contract PaymentHolder{
                 return (true, i);
             }
         }
+        balance -= tx.gasprice;
         return (false, 0);
     }
 
-    function amountToReturn(uint256 amount) private view
+    function amountToReturn(uint256 amount) private
         returns (uint256 returnable)
     {
         uint256 realValue;
-        realValue = amount-tx.gasprice;
+        realValue = amount-tx.gasprice*2;
 
+        balance -= tx.gasprice;
         return (realValue);
     }
 
+    function getContractBalance() public
+        returns (uint256 contractBalance)
+    {
+        balance -= tx.gasprice;
+        return balance;
+    }
+
+    function retrievePayment(string calldata passwd, uint256 amount) external payable
+        returns (bool res)
+    {
+        bytes memory _passwd = bytes(passwd);
+        if(sha256(_passwd) == passphrase && msg.sender == owner){
+            if(balance >= amount){
+                owner.transfer(amount);
+                return true;
+            }
+        }
+        balance -= tx.gasprice;
+        return false;
+    }
+
+    function ressetPassphrase(string memory current, string memory newPassphrase) public
+        returns (string memory res)
+    {
+        if(msg.sender == owner && sha256(bytes(current)) == passphrase){
+            passphrase = sha256(bytes(newPassphrase));
+            return ("Password changed successfully.");
+        }
+        balance -= tx.gasprice;
+        return ("Password or account are wrong.");
+    }
 
 }

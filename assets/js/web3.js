@@ -1,5 +1,6 @@
+global.BigNumber = require('big-number');
 global.Web3j = require('web3');
-
+global.onRequest = false;
 
 web3 = new Web3j("http://127.0.0.1:8545");
 
@@ -7,10 +8,10 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0xa6D0DE48DCf96Fc62Ea9DB392Ae00f29ba96BF22",
+    contractAddress: "0x6c4F4e17683CB95Ed3D10B8Abf1F428003dF25E7",
     contract: false,
     truffleDirectory: "../../truffle/build/contracts/",
-    contractName: 'HelloWorld',
+    contractName: 'PaymentHolder',
     userWallet: ""
 }
 
@@ -86,12 +87,14 @@ let eth3 = new Vue({
 
         consumeContract: function()
         {
+            if(onRequest) return;
+            onRequest = true;
             if(this.contractAddress.length > 10){
                 let contractJSON;
                 let myContract
                 $.getJSON(this.truffleDirectory+this.contractName+'.json').then(json =>{
                     contractJSON = json;
-                    myContract = new web3.eth.Contract(contractJSON.abi, this.contractAddress);
+                    myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
                     myContract.methods.Hello().send({from:'0x5884E106E91F3f1611b81022e59d1573ABe82820'}, (err, result)=>{
                         if(!err){
                             myContract.methods.getMessage().call().then( (error, result) => {
@@ -99,9 +102,52 @@ let eth3 = new Vue({
                                 this.contract = contract;
                             })
                         }
+                        onRequest = true;
                     });
                 })
             }
+
+        },
+        getContractBalance: function()
+        {
+            let contractJSON;
+            let myContract;
+
+            if(onRequest) return;
+            onRequest = true;
+            $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
+                contractJSON = json;
+                myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
+                myContract.methods.getContractBalance().send({
+                    from: data.userWallet
+                }).then(result=>{
+                    console.log(result._hex/10**18);
+                });
+                onRequest = false;
+            });
+
+        },
+        insertPaymentIntention: function()
+        {
+            let contractJSON;
+            let myContract;
+
+            if(onRequest) return;
+            onRequest = true;
+            $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
+                contractJSON = json;
+                myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
+                myContract.methods.insertPaymentIntention(
+                    1, 100000000000, 2, '9812dh9821',
+                    '0x972E12e6B66F6503E29a4B139268880A869cA541'
+                ).send({
+                    from: data.userWallet
+                }).then(result=>{
+                    console.log(result);
+                });
+                onRequest = false;
+            });
+
 
         },
         getUserWallet: function()
@@ -115,6 +161,8 @@ let eth3 = new Vue({
 
         updateWallet: function()
         {
+            if(onRequest) return;
+            onRequest = true;
             $.post('api/usr/alter/ethwallet', {
                 exec: 'update_wallet',
                 wallet: data.userWallet
@@ -123,6 +171,7 @@ let eth3 = new Vue({
                     message: r.res,
                     type: r.err == false ? 'success' : 'danger'
                 });
+                onRequest = false;
             })
         }
     },
