@@ -47,13 +47,13 @@ O roteamento é simples e existem duas formas de ser feito:
 ```
 return [
    'routename' => $l = new Layout,
-      $layout->setPage('page-name') //pagina contida em app/pages
+      $l->setPage('page-name') //pagina contida em app/pages
       ->otherSettings()
       ->otherSettings()
       ->otherSettings()
    , // <-- Vírgula separa uma rota de outra
    'routename-2' => $l = new Layout,
-      $layout->setPage('page-name')
+      $l->setPage('page-name')
    ,   
 ]
 ```
