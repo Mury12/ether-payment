@@ -18,14 +18,18 @@ partindo de um pre-made project. Contém, em suas dependências:
 Para iniciar seu trabalho, será necessário Node.js v10 ou superior instalado, para utilizar-se do Node Package Manager (npm)
 Dentro do diretório do seu projeto, rode o npm:
 
-* `$ npm install -g grunt `
+* `$ npm install -g grunt ` 
+* `$ npm install -g solc`    //Solidity Compiler
+* `$ npm install -g truffle` //Truffle contract deployer
 * `$ npm install `
 
 ## Para executar seu projeto:
+** Certifique-se de fazer o download correto da blockchain (Ganache)[https://truffleframework.com/ganache] e executar na porta 8545.
 
-* `$ grunt dev `
-
-** Note que este comando irá rodar um servidor em sua máquina em `localhost:3000`. Certifique-se de que possui php7.0+ instalado.
+* `$ grunt dev ` //Roda o servidor local
+* `$ truffle compile` //Compila os contratos na pasta truffle/contracts
+* `$ truffle migrate` //faz deploy dos contratos
+** Note que este comando irá rodar um servidor em sua máquina em `localhost:3000`. Certifique-se de que possui Node 10.6+ e php7.0+ instalado.
 
 * `$ sudo apt-get install php`
 
@@ -87,7 +91,7 @@ As páginas dinâmicas são páginas que podem ser criadas pelo próŕio usuári
 
  O projeto é organizado em diretórios da seguinte forma:
 
-    - Você Advogado
+    - Ether-payment
     ├── app
     │   ├── pages
     │   │   ├── api (Webservices e comunicações com serviços)
@@ -112,25 +116,11 @@ As páginas dinâmicas são páginas que podem ser criadas pelo próŕio usuári
     |   ├── pjs (Saída do Babelify)
     │   └── sass
     │   │   └── partials
-    ├── blog
-    │   ├── wp-content
-    │   │   └── themes
-    │   │       └── myMiniFramework
-    │   │           ├── css 
-    │   │               └── Sass output folder (Por padrão, o output é na pasta /assets/css)
-    │   │           ├── img
-    │   │           ├── js
-    │   │               ├── partials
-    │   │               ├── `script.js` (arquivo JavaScript principal)
-    │   │               └── `script.min.js` (saída do browserify)
-    │   │           ├── partials
-    │   │               └── Pasta com componentes parciais das páginas
-    │   │           ├── sass
-    │   │           ├── partials
-    │   │               ├── `_theme.scss` (arquivo principal do tema)
-    │   │               └── partials
-    │   │           └── *Wordpress default files*
-    │   └── *Wordpress content*
+    ├── truffle
+    │   ├── contracts
+    │   │   └── Contracts.sol
+    │   ├── build (Build files)
+    │   └── migrations (Migrations scripts)
     ├── node_modules
     │ `index.php` (Não alterar)
     └── *Dependency Files*
