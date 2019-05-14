@@ -18,7 +18,7 @@
                 ->addJs("web3")
         ,
         //Cada chave carrega uma instância do Layout, contendo as propriedades da página, vistas em app/partials/classes/Layout.php.
-        
+
         'array-keys'=>
                 $l = new Layout,
                 $l->appendTitle('Teste', "-")
@@ -64,6 +64,18 @@
         'api/usr/login' =>
                 $l = new Layout,
                 $l->setPage('api/usr/login')
+                ->isApi(true)
+        ,
+        'api/usr/alter/ethwallet' =>
+                $l = new Layout,
+                $l->setPage('api/usr/alter_data')
+                ->permission('auth')
+                ->isApi(true)
+        ,
+        'api/usr/get' =>
+                $l = new Layout,
+                $l->setPage('api/usr/get')
+                ->permission('auth')
                 ->isApi(true)
         ,
         'api/pages' =>

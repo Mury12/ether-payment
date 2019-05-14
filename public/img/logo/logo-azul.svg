@@ -1,0 +1,75 @@
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1105.92 634.68">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #fff;
+                stroke-miterlimit: 10;
+            }
+
+            .cls-2,
+            .cls-7,
+            .cls-8 {
+                fill: #b9f2fc;
+            }
+
+            .cls-2,
+            .cls-3,
+            .cls-4,
+            .cls-5 {
+                opacity: 0.74;
+            }
+
+            .cls-3,
+            .cls-6 {
+                fill: #1a424c;
+            }
+
+            .cls-4 {
+                fill: #3a4941;
+            }
+
+            .cls-5 {
+                fill: #bbf9c2;
+            }
+
+            .cls-6 {
+                opacity: 0.84;
+            }
+
+            .cls-6,
+            .cls-7,
+            .cls-8 {
+                font-size: 200px;
+                font-family: WillGrace, "WillGrace";
+            }
+
+            .cls-7 {
+                opacity: 0.72;
+            }
+
+            .cls-9 {
+                letter-spacing: -0.03em;
+            }
+
+            .cls-10 {
+                letter-spacing: -0.08em;
+            }
+        </style>
+    </defs>
+    <title>LOGO1AZUL</title>
+    <path class="cls-1" d="M1064.64,206.06" transform="translate(-532.88 -188.42)" />
+    <path class="cls-2" d="M1188.2,570.84c0,76-91.7,107.6-167.73,107.6s-167.74-31.57-167.74-107.6" transform="translate(-532.88 -188.42)" />
+    <path class="cls-3" d="M1048.17,570.92c0,76-91.7,107.6-167.74,107.6S712.7,647,712.7,570.92" transform="translate(-532.88 -188.42)" />
+    <path class="cls-2" d="M881.64,272.23c-17.39,11.63-40.43,27.26-62.67,52.7-14.22,16.26-30.31,46.41-41.28,78.25-29.94,86.92-7.67,167.93-3.16,167.74s-4.65-77.21,23.4-163.57c16.58-51,57.21-103.23,82.5-130.15"
+        transform="translate(-532.88 -188.42)" />
+    <path class="cls-3" d="M1021.67,272.15a313.59,313.59,0,0,1,60.26,52.7c14.22,16.26,30.31,46.41,41.28,78.25,29.94,86.92,7.67,167.93,3.16,167.74s4.64-77.21-23.4-163.57c-17.12-52.7-59.88-106.63-84.92-132.69"
+        transform="translate(-532.88 -188.42)" />
+    <path class="cls-4" d="M720,189.94l2.42,1.62" transform="translate(-532.88 -188.42)" />
+    <path class="cls-2" d="M881.64,272.23a313.59,313.59,0,0,1,60.26,52.7c14.22,16.26,30.31,46.41,41.27,78.25,30,86.92,7.68,167.93,3.17,167.74s4.64-77.21-23.41-163.57c-17.11-52.7-59.87-106.63-84.91-132.69"
+        transform="translate(-532.88 -188.42)" />
+    <path class="cls-5" d="M880.43,273c.86.57.5-1.29,1.21-.81" transform="translate(-532.88 -188.42)" />
+    <path class="cls-3" d="M1021.67,272.15c-17.39,11.63-40.42,27.26-62.67,52.7-14.22,16.26-30.31,46.41-41.28,78.25C887.78,490,910.05,571,914.56,570.84S909.92,493.63,938,407.27c17.11-52.7,59.87-106.63,84.91-132.69"
+        transform="translate(-532.88 -188.42)" /><text x="-532.88" y="-188.42" /><text class="cls-6" transform="translate(429.74 345.68)">C</text><text
+        class="cls-7" transform="translate(276.13 345.68)">V</text>
+</svg>

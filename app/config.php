@@ -14,7 +14,7 @@ require_once 'app/partials/classes/controller/SubsectionController.php';
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
  define('DB_HOST', 'localhost');
- define('DB_NAME', 'mm_proj1');
+ define('DB_NAME', 'eth_pay');
  define('DB_USER', 'root');
  define('DB_PASS', 'root');
 
@@ -28,8 +28,6 @@ try{
 
 $r = new Router();
 $routes = require_once('routes.php');
-$_routes= require_once('dynamic-routes.php');
-$routes = array_merge($routes, $_routes);
 
 $r->new_route($routes);
 
@@ -39,9 +37,3 @@ $_s = new Session();
 $_s->initSession();
 
 $layout  = $r->getPage();
-
-$section = Array(
-    'ssTitle' => "Uma subseção!",
-    'ssContent' => "O conteúdo de uma subseção pode ser qualquer coisa. Um texto, imagens ou mídia.",
-    'ref' => '14'
-);

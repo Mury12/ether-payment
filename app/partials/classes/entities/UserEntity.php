@@ -16,7 +16,7 @@ class UserEntity
             if(array_key_exists('name', $data)){
                 $this->name  = $data['name'];
             }
-            
+
             if(array_key_exists('email', $data)){
                 $this->email = $data['email'];
             }
@@ -41,13 +41,12 @@ class UserEntity
     }
 
     function insert()
-    {   
+    {
         global $conn;
-        
+
         if(!$this->checkEmailRegistered()){
 
-        $query  = 'INSERT INTO users (name, email, pwd, status) VALUES (?, ?, ?, 1);';
-        $query .= 'INSERT INTO user_data (user_id) VALUES (SELECT id from users ORDER BY id DESC LIMIT 1);';
+        $query  = 'call create_user(?, ?, ?);';
 
         $q = $conn->prepare($query);
             $q->bindParam(1, $this->name);
@@ -58,6 +57,40 @@ class UserEntity
         }else{
             sendJsonResponse(['err'=>'Este e-mail já está registrado.']);
         }
+    }
+
+    function addUserEthWallet($uid, $wallet)
+    {
+        global $conn;
+
+        $query = "UPDATE user_data SET ether_wallet = ? WHERE user_id = ?";
+        $user_data_id = $this->getUserDataId($uid);
+
+        $q = $conn->prepare($query);
+        $q->bindParam(1, $wallet);
+        $q->bindParam(2, $user_data_id);
+
+        return $this->executeQuery($q);
+
+    }
+
+    function getUserWallet($uid)
+    {
+        global $conn;
+
+        $udata = $this->getUserDataId($uid);
+        $query = "SELECT ether_wallet FROM user_data WHERE user_id = ?";
+
+        $q = $conn->prepare($query);
+        $q->bindParam(1, $udata);
+
+        if($q = $this->executeQuery($q)){
+            $r = $q->fetch(PDO::FETCH_NUM);
+            return $r[0];
+        }
+
+        return false;
+
     }
 
     function checkEmailRegistered()
@@ -100,7 +133,7 @@ class UserEntity
 
             if($this->executeQuery($q)){
                 return true;
-            }   
+            }
             return false;
     }
 
@@ -118,6 +151,23 @@ class UserEntity
         if($q && $q->rowCount() === 1){
             $r = $q->fetch(PDO::FETCH_NUM)[0];
             return $r;
+        }
+        return false;
+
+    }
+
+    function getUserDataId($uid)
+    {
+        global $conn;
+
+        $query = 'SELECT id FROM user_data WHERE user_id = ?';
+
+        $q = $conn->prepare($query);
+        $q->bindParam(1, $uid);
+
+        if($q = $this->executeQuery($q)){
+            $r = $q->fetch(PDO::FETCH_NUM);
+            return $r[0];
         }
         return false;
 

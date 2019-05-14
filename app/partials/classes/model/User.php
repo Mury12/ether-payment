@@ -36,7 +36,7 @@ class User
     function isLoggedIn(){
         if($_SESSION[hash('sha256', 'auth')]){
             return true;
-        }   
+        }
         return false;
     }
 
@@ -76,7 +76,7 @@ class User
         $this->name = $name;
         return $this;
     }
-    
+
     function setEmail($email)
     {
         $this->email = $email;
