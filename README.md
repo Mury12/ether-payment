@@ -1,6 +1,6 @@
 # My Mini
 
-MyMini é um micro ambiente de trabalho para Web Developers focado na rapidez de desenvolvimento
+MyMini é um micro ambiente de trabalho para Web focado na rapidez de desenvolvimento
 sobre uma base sólida e concretizada para que o desenvolvedor tenha total liberdade ao iniciar seu projeto,
 partindo de um pre-made project. Contém, em suas dependências:
  - Bootstrap
