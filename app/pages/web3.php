@@ -10,18 +10,31 @@
                 <button class="btn btn-info" @click="killBalances = true, killWallets = true"> Stop Updates</button><br/>
                 <label class="btn btn-info" @click="getContractBalance">
                     <input type="text" name="addr" v-model="contractAddress"><br/>
-                    Consume Contract
+                    CONTRACT BALANCE
+                </label>
+                <label class="btn btn-info" @click="getPaymentList">
+                    <input type="text" name="addr" v-model="contractAddress"><br/>
+                    Payment List
                 </label>
                 <label class="btn btn-info" @click="insertPaymentIntention">
                     <input type="text" name="addr" v-model="contractAddress"><br/>
-                    Consume Contract
+                    PAYMENT INTENTION
                 </label>
                 <label class="btn btn-info" @click="updateWallet">
                     <input type="text" name="addr" v-model="userWallet"><br/>
                     Update Wallet
                 </label>
 
-                <p class="t-white" v-if="contract">{{contract.message}}</p>
+                <p class="t-white" >{{contract.message}}</p>
+                <div class="t-white" >
+                    <table class="t-white t-center">
+                        <thead class="t-center"></thead>
+                        <tr v-for="(p, idx) in contract.paymentList[0]">
+                            <td>{{p[idx]}}</td>
+                            <td>{{(contract.paymentList[1][idx])}}</td>
+                        </tr>
+                    </table>
+                </div>
 
                 <p class="t-white">
 

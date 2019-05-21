@@ -8,8 +8,11 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0xB26De4E54806961D3ba2c8A6A32174954933Bf24",
-    contract: false,
+    contractAddress: "0xd6dEa4e7C5e61A188aB01411B32A2C32ff52586a",
+    contract: {
+        message: '',
+        paymentList:[]
+    },
     truffleDirectory: "../../truffle/build/contracts/",
     contractName: 'PaymentHolder',
     userWallet: "",
@@ -118,10 +121,29 @@ let eth3 = new Vue({
             $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
-                myContract.methods.searchPayment(data.userWallet).call({
+                myContract.methods.getContractBalance().call({
                     from: data.userWallet
                 }).then(result=>{
-                    console.log(result);
+                    data.contract.message = 'Contract balance: '+result/10**18 + ' ETH';
+                });
+                onRequest = false;
+            });
+
+        },
+        getPaymentList: function()
+        {
+            let contractJSON;
+            let myContract;
+
+            if(onRequest) return;
+            onRequest = true;
+            $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
+                contractJSON = json;
+                myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
+                myContract.methods.getPayments().call({
+                    from: data.userWallet
+                }).then(result=>{
+                    data.contract.paymentList = result;
                 });
                 onRequest = false;
             });

@@ -18,14 +18,12 @@ contract PaymentHolder{
     Payment[] payments;
     address payable owner;
     bytes32 private passphrase;
-    uint256 balance;
     uint256[] confirmedPayments;
 
 
     constructor (string memory passwd) public
     {
         bytes memory _passwd = bytes(passwd);
-        balance = 0;
         owner = msg.sender;
         passphrase = sha256(_passwd);
     }
@@ -54,7 +52,11 @@ contract PaymentHolder{
     }
 
     function () external payable {
-        pay();
+        if (msg.sender == owner){
+            flushBalance();
+        }else{
+            pay();
+        }
     }
 
     function pay() public payable
@@ -67,13 +69,11 @@ contract PaymentHolder{
         if(!found || (found && (payments[idx].confirmed || payments[idx].canceled))){
             uint256 amountToReturn = amountToReturn(msg.value);
             msg.sender.transfer(amountToReturn);
-            balance -= amountToReturn;
             return;
         }
         payments[idx].confirmed = true;
         confirmedPayments.push(idx);
 
-        balance += payments[idx].price;
     }
 
     function getPayments() public view
@@ -117,7 +117,7 @@ contract PaymentHolder{
     function getContractBalance() public view
         returns (uint256 contractBalance)
     {
-        return balance;
+        return address(this).balance;
     }
 
     function retrievePayment(string calldata passwd, uint256 amount) external payable
@@ -125,31 +125,17 @@ contract PaymentHolder{
     {
         bytes memory _passwd = bytes(passwd);
         if(sha256(_passwd) == passphrase && msg.sender == owner){
-            if(balance >= amount){
+            if(address(this).balance >= amount){
                 owner.transfer(amount);
                 return true;
             }
         }
-        balance -= tx.gasprice;
         return false;
     }
 
-    function ressetPassphrase(string memory current, string memory newPassphrase) public
-        returns (string memory res)
+    function flushBalance() public payable
     {
-        if(msg.sender == owner && sha256(bytes(current)) == passphrase){
-            passphrase = sha256(bytes(newPassphrase));
-            return ("Password changed successfully.");
-        }
-        balance -= tx.gasprice;
-        return ("Password or account are wrong.");
-    }
-
-    function checkPassphrase(string memory pwd) public view
-        returns (bool res)
-    {
-        if(sha256(bytes(pwd)) == passphrase) return true;
-        return false;
+        owner.transfer(address(this).balance);
     }
 
 }
