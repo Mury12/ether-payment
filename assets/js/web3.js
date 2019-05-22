@@ -8,8 +8,11 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0xB26De4E54806961D3ba2c8A6A32174954933Bf24",
-    contract: false,
+    contractAddress: "0x1EEAad35c31FcE919358235a2AB6Bc1213D6882d",
+    contract: {
+        message: '',
+        paymentList:[]
+    },
     truffleDirectory: "../../truffle/build/contracts/",
     contractName: 'PaymentHolder',
     userWallet: "",
@@ -118,16 +121,16 @@ let eth3 = new Vue({
             $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
-                myContract.methods.searchPayment(data.userWallet).call({
+                myContract.methods.getContractBalance().call({
                     from: data.userWallet
                 }).then(result=>{
-                    console.log(result);
+                    data.contract.message = 'Contract balance: '+result/10**18 + ' ETH';
                 });
                 onRequest = false;
             });
 
         },
-        insertPaymentIntention: function()
+        getPaymentList: function()
         {
             let contractJSON;
             let myContract;
@@ -137,8 +140,27 @@ let eth3 = new Vue({
             $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
+                myContract.methods.getPayments().call({
+                    from: data.userWallet
+                }).then(result=>{
+                    data.contract.paymentList = result;
+                });
+                onRequest = false;
+            });
+
+        },
+        insertPaymentIntention: function()
+        {
+            let contractJSON;
+            let myContract;
+            let amount = 1;
+            if(onRequest) return;
+            onRequest = true;
+            $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
+                contractJSON = json;
+                myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
                 myContract.methods.insertPaymentIntention(
-                    1, 1, 2, '9812dh9821',
+                    1, amount, 2, '9812dh9821',
                     data.userWallet
                 ).send({
                     from: data.userWallet,
