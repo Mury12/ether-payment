@@ -8,7 +8,7 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0xd6dEa4e7C5e61A188aB01411B32A2C32ff52586a",
+    contractAddress: "0x1EEAad35c31FcE919358235a2AB6Bc1213D6882d",
     contract: {
         message: '',
         paymentList:[]
@@ -153,14 +153,14 @@ let eth3 = new Vue({
         {
             let contractJSON;
             let myContract;
-
+            let amount = 1;
             if(onRequest) return;
             onRequest = true;
             $.getJSON(this.truffleDirectory + this.contractName+'.json').then(json => {
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
                 myContract.methods.insertPaymentIntention(
-                    1, 1, 2, '9812dh9821',
+                    1, amount, 2, '9812dh9821',
                     data.userWallet
                 ).send({
                     from: data.userWallet,
