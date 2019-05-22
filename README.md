@@ -27,9 +27,10 @@ Dentro do diretório do seu projeto, rode o npm:
 ** Certifique-se de fazer o download correto da blockchain (Ganache)[https://truffleframework.com/ganache] e executar na porta 8545.
 
 * `$ grunt dev ` //Roda o servidor local
+** Note que este comando irá rodar um servidor em sua máquina em `localhost:3000`. Certifique-se de que possui Node 10.6+ e php7.0+ instalado.
 * `$ truffle compile` //Compila os contratos na pasta truffle/contracts
 * `$ truffle migrate` //faz deploy dos contratos
-** Note que este comando irá rodar um servidor em sua máquina em `localhost:3000`. Certifique-se de que possui Node 10.6+ e php7.0+ instalado.
+
 
 * `$ sudo apt-get install php`
 
