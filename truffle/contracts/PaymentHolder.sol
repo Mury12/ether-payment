@@ -5,11 +5,8 @@ contract PaymentHolder{
 
     struct Payment {
         address payable user_wallet;
-        uint256 paymentId;
         uint256 price;
         uint256 gasUsed;
-        uint256 userId;
-        string  paymentToken;
         string  timestamp;
     }
 
@@ -24,7 +21,7 @@ contract PaymentHolder{
     }
 
     function insertPaymentIntention
-        (uint256 paymentId, uint256 price, uint userId, string memory paymentToken, address payable user_wallet)
+        (uint256 price, address payable user_wallet)
         public
     {
         bool found;
@@ -34,10 +31,7 @@ contract PaymentHolder{
 
 
         Payment memory p;
-        p.paymentId = paymentId;
         p.price = price;
-        p.userId = userId;
-        p.paymentToken = paymentToken;
         p.user_wallet = user_wallet;
         p.gasUsed = tx.gasprice;
 

@@ -8,7 +8,7 @@ let data = {
     accounts: [],
     killWallets: false,
     killBalances: false,
-    contractAddress: "0x1EEAad35c31FcE919358235a2AB6Bc1213D6882d",
+    contractAddress: "0x1f07443F5EDACE48A81983566509D7E5e8422e4e",
     contract: {
         message: '',
         paymentList:[]
@@ -160,13 +160,13 @@ let eth3 = new Vue({
                 contractJSON = json;
                 myContract = new web3.eth.Contract(contractJSON.abi, data.contractAddress);
                 myContract.methods.insertPaymentIntention(
-                    1, amount, 2, '9812dh9821',
+                    amount,
                     data.userWallet
                 ).send({
                     from: data.userWallet,
                     gas: 1000000
                 }).then(result=>{
-                    console.log(result);
+                    this.contract.message = result;
                 });
                 onRequest = false;
             });
