@@ -39,15 +39,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"kill\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"nonce\",\"type\":\"uint256\"},{\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"claimPayment\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/andremury/vhosts/ether-payment/truffle/contracts/Payment.sol\":\"Payment\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/andremury/vhosts/ether-payment/truffle/contracts/Payment.sol\":{\"keccak256\":\"0xfb0a1ff41c99b7c981fca7cb1b8efe6374a1fe92e50bf7b1511fc710c5322590\",\"urls\":[\"bzzr://dbff589d2666aedc1e1362abc5b532efea7b79c2f928ddd9d5f9c43033702133\"]}},\"version\":1}",
-  "bytecode": "0x60806040526104d1806100136000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b514610051578063a90ae88714610068575b600080fd5b34801561005d57600080fd5b50610066610144565b005b34801561007457600080fd5b506101426004803603606081101561008b57600080fd5b810190808035906020019092919080359060200190929190803590602001906401000000008111156100bc57600080fd5b8201836020820111156100ce57600080fd5b803590602001918460018302840111640100000000831117156100f057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101bb565b005b6000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101a257600080fd5b3373ffffffffffffffffffffffffffffffffffffffff16ff5b6002600083815260200190815260200160002060009054906101000a900460ff161515156101e857600080fd5b60016002600084815260200190815260200160002060006101000a81548160ff02191690831515021790555060006102d333858530604051602001808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c0100000000000000000000000002815260140194505050505060405160208183030381529060405280519060200120610389565b90506000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1661031a82846103e1565b73ffffffffffffffffffffffffffffffffffffffff1614151561033c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc859081150290604051600060405180830381858888f19350505050158015610382573d6000803e3d6000fd5b5050505050565b60008160405160200180807f19457468657265756d205369676e6564204d6573736167653a0a333200000000815250601c01828152602001915050604051602081830303815290604052805190602001209050919050565b6000806000806103f085610468565b92509250925060018684848460405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610453573d6000803e3d6000fd5b50505060206040510351935050505092915050565b60008060006041845114151561047d57600080fd5b6020840151915060408401519050606084015160001a9250828282925092509250919390925056fea165627a7a72305820a9e52ce6374617e0fe3eebe3eb925129e8bf732fd189d92dac0d37bcb45c5a730029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b514610051578063a90ae88714610068575b600080fd5b34801561005d57600080fd5b50610066610144565b005b34801561007457600080fd5b506101426004803603606081101561008b57600080fd5b810190808035906020019092919080359060200190929190803590602001906401000000008111156100bc57600080fd5b8201836020820111156100ce57600080fd5b803590602001918460018302840111640100000000831117156100f057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101bb565b005b6000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101a257600080fd5b3373ffffffffffffffffffffffffffffffffffffffff16ff5b6002600083815260200190815260200160002060009054906101000a900460ff161515156101e857600080fd5b60016002600084815260200190815260200160002060006101000a81548160ff02191690831515021790555060006102d333858530604051602001808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c0100000000000000000000000002815260140194505050505060405160208183030381529060405280519060200120610389565b90506000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1661031a82846103e1565b73ffffffffffffffffffffffffffffffffffffffff1614151561033c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc859081150290604051600060405180830381858888f19350505050158015610382573d6000803e3d6000fd5b5050505050565b60008160405160200180807f19457468657265756d205369676e6564204d6573736167653a0a333200000000815250601c01828152602001915050604051602081830303815290604052805190602001209050919050565b6000806000806103f085610468565b92509250925060018684848460405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610453573d6000803e3d6000fd5b50505060206040510351935050505092915050565b60008060006041845114151561047d57600080fd5b6020840151915060408401519050606084015160001a9250828282925092509250919390925056fea165627a7a72305820a9e52ce6374617e0fe3eebe3eb925129e8bf732fd189d92dac0d37bcb45c5a730029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"kill\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"nonce\",\"type\":\"uint256\"},{\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"claimPayment\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/mury/vhosts/ether-payment/truffle/contracts/Payment.sol\":\"Payment\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/mury/vhosts/ether-payment/truffle/contracts/Payment.sol\":{\"keccak256\":\"0xfb0a1ff41c99b7c981fca7cb1b8efe6374a1fe92e50bf7b1511fc710c5322590\",\"urls\":[\"bzzr://dbff589d2666aedc1e1362abc5b532efea7b79c2f928ddd9d5f9c43033702133\"]}},\"version\":1}",
+  "bytecode": "0x60806040526104d1806100136000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b514610051578063a90ae88714610068575b600080fd5b34801561005d57600080fd5b50610066610144565b005b34801561007457600080fd5b506101426004803603606081101561008b57600080fd5b810190808035906020019092919080359060200190929190803590602001906401000000008111156100bc57600080fd5b8201836020820111156100ce57600080fd5b803590602001918460018302840111640100000000831117156100f057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101bb565b005b6000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101a257600080fd5b3373ffffffffffffffffffffffffffffffffffffffff16ff5b6002600083815260200190815260200160002060009054906101000a900460ff161515156101e857600080fd5b60016002600084815260200190815260200160002060006101000a81548160ff02191690831515021790555060006102d333858530604051602001808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c0100000000000000000000000002815260140194505050505060405160208183030381529060405280519060200120610389565b90506000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1661031a82846103e1565b73ffffffffffffffffffffffffffffffffffffffff1614151561033c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc859081150290604051600060405180830381858888f19350505050158015610382573d6000803e3d6000fd5b5050505050565b60008160405160200180807f19457468657265756d205369676e6564204d6573736167653a0a333200000000815250601c01828152602001915050604051602081830303815290604052805190602001209050919050565b6000806000806103f085610468565b92509250925060018684848460405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610453573d6000803e3d6000fd5b50505060206040510351935050505092915050565b60008060006041845114151561047d57600080fd5b6020840151915060408401519050606084015160001a9250828282925092509250919390925056fea165627a7a723058206f1d3e376963322a78444d921ad003e26b241ac4240830b48d2cbc754d5470c00029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b514610051578063a90ae88714610068575b600080fd5b34801561005d57600080fd5b50610066610144565b005b34801561007457600080fd5b506101426004803603606081101561008b57600080fd5b810190808035906020019092919080359060200190929190803590602001906401000000008111156100bc57600080fd5b8201836020820111156100ce57600080fd5b803590602001918460018302840111640100000000831117156100f057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101bb565b005b6000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101a257600080fd5b3373ffffffffffffffffffffffffffffffffffffffff16ff5b6002600083815260200190815260200160002060009054906101000a900460ff161515156101e857600080fd5b60016002600084815260200190815260200160002060006101000a81548160ff02191690831515021790555060006102d333858530604051602001808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c0100000000000000000000000002815260140194505050505060405160208183030381529060405280519060200120610389565b90506000800160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1661031a82846103e1565b73ffffffffffffffffffffffffffffffffffffffff1614151561033c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc859081150290604051600060405180830381858888f19350505050158015610382573d6000803e3d6000fd5b5050505050565b60008160405160200180807f19457468657265756d205369676e6564204d6573736167653a0a333200000000815250601c01828152602001915050604051602081830303815290604052805190602001209050919050565b6000806000806103f085610468565b92509250925060018684848460405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610453573d6000803e3d6000fd5b50505060206040510351935050505092915050565b60008060006041845114151561047d57600080fd5b6020840151915060408401519050606084015160001a9250828282925092509250919390925056fea165627a7a723058206f1d3e376963322a78444d921ad003e26b241ac4240830b48d2cbc754d5470c00029",
   "sourceMap": "34:1668:2:-;;;;;;;;;",
   "deployedSourceMap": "34:1668:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;613:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;613:115:2;;;;;;239:368;;8:9:-1;5:2;;;30:1;27;20:12;5:2;239:368:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;239:368:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;239:368:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;239:368:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;239:368:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;239:368:2;;;;;;;;;;;;;;;;;;613:115;672:7;:14;;;;;;;;;;;;658:28;;:10;:28;;;650:37;;;;;;;;710:10;697:24;;;239:368;340:10;:17;351:5;340:17;;;;;;;;;;;;;;;;;;;;;339:18;331:27;;;;;;;;388:4;368:10;:17;379:5;368:17;;;;;;;;;;;;:24;;;;;;;;;;;;;;;;;;403:15;421:70;457:10;469:6;477:5;484:4;440:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;440::2;;;430:60;;;;;;421:8;:70::i;:::-;403:88;;547:7;:14;;;;;;;;;;;;510:51;;:33;524:7;533:9;510:13;:33::i;:::-;:51;;;502:60;;;;;;;;573:10;:19;;:27;593:6;573:27;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;573:27:2;239:368;;;;:::o;1542:157::-;1597:7;1686:4;1633:58;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;1633:58:2;;;1623:69;;;;;;1616:76;;1542:157;;;:::o;1249:217::-;1338:7;1362;1371:9;1382;1395:19;1410:3;1395:14;:19::i;:::-;1361:53;;;;;;1432:27;1442:7;1451:1;1454;1457;1432:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1432:27:2;;;;;;;;1425:34;;;;;1249:217;;;;:::o;762:481::-;836:7;845:9;856;903:2;889:3;:10;:16;881:25;;;;;;;;1010:2;1005:3;1001:12;995:19;990:24;;1079:2;1074:3;1070:12;1064:19;1059:24;;1196:2;1191:3;1187:12;1181:19;1178:1;1173:28;1168:33;;1228:1;1231;1234;1220:16;;;;;;762:481;;;;;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract Payment{\n\n    struct Exchange{   \n        address renter;\n        address tenant;\n    }\n\n    Exchange wallets;\n\n    mapping(uint256 => bool) usedNonces;\n\n    constructor () public payable {}\n\n    function claimPayment(uint amount, uint nonce, bytes memory signature) public\n    {\n        require(!usedNonces[nonce]);\n        usedNonces[nonce] = true;\n\n        bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));\n\n        require(recoverSigner(message, signature) == wallets.renter);\n\n        msg.sender.transfer(amount);\n    }\n\n    function kill() public\n    {\n        require(msg.sender == wallets.renter);\n        selfdestruct(msg.sender);\n    }\n\n    //Método de assinatura\n    function splitSignature(bytes memory sig) internal pure \n        returns (uint8 v, bytes32 r, bytes32 s)\n    {\n        require(sig.length == 65);\n\n        assembly {\n            //Primeiros 32 bytes depois do prefix\n            r := mload(add(sig, 32))\n            //Segundos 32 bytes\n            s := mload(add(sig, 64))\n            //Último byte (primeiro byte depois dos últimos 32 bytes)\n            v := byte(0, mload(add(sig, 96)))\n        }\n        return (v, r, s);\n    }\n\n    function recoverSigner(bytes32 message, bytes memory sig) internal pure \n        returns(address)\n    {\n        (uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);\n\n        return ecrecover(message, v, r, s);\n    }\n\n    //Cria uma hash prefixada para trataro comportamento de eth_sign.\n    function prefixed(bytes32 hash) internal pure returns (bytes32) {\n        return keccak256(abi.encodePacked(\"\\x19Ethereum Signed Message:\\n32\", hash));\n    }\n\n}",
-  "sourcePath": "/home/andremury/vhosts/ether-payment/truffle/contracts/Payment.sol",
+  "sourcePath": "/home/mury/vhosts/ether-payment/truffle/contracts/Payment.sol",
   "ast": {
-    "absolutePath": "/home/andremury/vhosts/ether-payment/truffle/contracts/Payment.sol",
+    "absolutePath": "/home/mury/vhosts/ether-payment/truffle/contracts/Payment.sol",
     "exportedSymbols": {
       "Payment": [
         236
@@ -331,10 +331,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "331:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -487,7 +487,7 @@
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 690,
+                                  "referencedDeclaration": 722,
                                   "src": "457:3:2",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
@@ -540,7 +540,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 707,
+                                "referencedDeclaration": 739,
                                 "src": "484:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Payment_$236",
@@ -573,7 +573,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 677,
+                                "referencedDeclaration": 709,
                                 "src": "440:3:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -620,7 +620,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 684,
+                          "referencedDeclaration": 716,
                           "src": "430:9:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -807,10 +807,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "502:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -868,7 +868,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 722,
                           "src": "573:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1056,7 +1056,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 690,
+                            "referencedDeclaration": 722,
                             "src": "658:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1126,10 +1126,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "650:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1166,7 +1166,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 722,
                           "src": "710:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1199,7 +1199,7 @@
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 698,
+                      "referencedDeclaration": 730,
                       "src": "697:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
@@ -1339,10 +1339,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "881:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1374,7 +1374,7 @@
                         "declaration": 169,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "1005:3:2",
+                        "src": "1074:3:2",
                         "valueSize": 1
                       }
                     },
@@ -1385,18 +1385,7 @@
                         "isSlot": false,
                         "src": "990:1:2",
                         "valueSize": 1
-                      }
-                    },
-                    {
-                      "sig": {
-                        "declaration": 169,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "1074:3:2",
-                        "valueSize": 1
-                      }
-                    },
-                    {
+                      },
                       "s": {
                         "declaration": 176,
                         "isOffset": false,
@@ -1415,11 +1404,50 @@
                       }
                     },
                     {
+                      "s": {
+                        "declaration": 176,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1059:1:2",
+                        "valueSize": 1
+                      },
                       "v": {
                         "declaration": 172,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1168:1:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "sig": {
+                        "declaration": 169,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1191:3:2",
+                        "valueSize": 1
+                      },
+                      "r": {
+                        "declaration": 174,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "990:1:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "v": {
+                        "declaration": 172,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1168:1:2",
+                        "valueSize": 1
+                      },
+                      "sig": {
+                        "declaration": 169,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1005:3:2",
                         "valueSize": 1
                       }
                     }
@@ -1849,7 +1877,7 @@
                       "name": "ecrecover",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 682,
+                      "referencedDeclaration": 714,
                       "src": "1432:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_ecrecover_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
@@ -2045,7 +2073,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 677,
+                            "referencedDeclaration": 709,
                             "src": "1633:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -2092,7 +2120,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 684,
+                      "referencedDeclaration": 716,
                       "src": "1623:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -2207,7 +2235,7 @@
     "src": "0:1702:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/andremury/vhosts/ether-payment/truffle/contracts/Payment.sol",
+    "absolutePath": "/home/mury/vhosts/ether-payment/truffle/contracts/Payment.sol",
     "exportedSymbols": {
       "Payment": [
         236
@@ -2491,10 +2519,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "331:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2647,7 +2675,7 @@
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 690,
+                                  "referencedDeclaration": 722,
                                   "src": "457:3:2",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
@@ -2700,7 +2728,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 707,
+                                "referencedDeclaration": 739,
                                 "src": "484:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Payment_$236",
@@ -2733,7 +2761,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 677,
+                                "referencedDeclaration": 709,
                                 "src": "440:3:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -2780,7 +2808,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 684,
+                          "referencedDeclaration": 716,
                           "src": "430:9:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -2967,10 +2995,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "502:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3028,7 +3056,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 722,
                           "src": "573:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3216,7 +3244,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 690,
+                            "referencedDeclaration": 722,
                             "src": "658:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -3286,10 +3314,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "650:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3326,7 +3354,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 722,
                           "src": "710:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3359,7 +3387,7 @@
                       "name": "selfdestruct",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 698,
+                      "referencedDeclaration": 730,
                       "src": "697:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
@@ -3499,10 +3527,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        693,
-                        694
+                        725,
+                        726
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "881:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3534,7 +3562,7 @@
                         "declaration": 169,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "1005:3:2",
+                        "src": "1074:3:2",
                         "valueSize": 1
                       }
                     },
@@ -3545,18 +3573,7 @@
                         "isSlot": false,
                         "src": "990:1:2",
                         "valueSize": 1
-                      }
-                    },
-                    {
-                      "sig": {
-                        "declaration": 169,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "1074:3:2",
-                        "valueSize": 1
-                      }
-                    },
-                    {
+                      },
                       "s": {
                         "declaration": 176,
                         "isOffset": false,
@@ -3575,11 +3592,50 @@
                       }
                     },
                     {
+                      "s": {
+                        "declaration": 176,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1059:1:2",
+                        "valueSize": 1
+                      },
                       "v": {
                         "declaration": 172,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1168:1:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "sig": {
+                        "declaration": 169,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1191:3:2",
+                        "valueSize": 1
+                      },
+                      "r": {
+                        "declaration": 174,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "990:1:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "v": {
+                        "declaration": 172,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1168:1:2",
+                        "valueSize": 1
+                      },
+                      "sig": {
+                        "declaration": 169,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1005:3:2",
                         "valueSize": 1
                       }
                     }
@@ -4009,7 +4065,7 @@
                       "name": "ecrecover",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 682,
+                      "referencedDeclaration": 714,
                       "src": "1432:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_ecrecover_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
@@ -4205,7 +4261,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 677,
+                            "referencedDeclaration": 709,
                             "src": "1633:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -4252,7 +4308,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 684,
+                      "referencedDeclaration": 716,
                       "src": "1623:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -4371,8 +4427,8 @@
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.8",
-  "updatedAt": "2019-05-22T02:45:12.119Z",
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2019-05-28T15:46:39.699Z",
   "devdoc": {
     "methods": {}
   },
